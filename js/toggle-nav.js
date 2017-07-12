@@ -9,7 +9,7 @@ $(document).ready(function(){
         }
     })
     $('.aside__list-item-link').on('click', function(){
-        $('.aside__list-item-link').removeClass('aside__list-item_active');
-        $(this).addClass('aside__list-item_active');
+        $('.aside__list-item-link').removeClass('aside__list-item_active-strong');
+        $(this).addClass('aside__list-item_active-strong');
     })
 })
