@@ -1,12 +1,21 @@
 $(document).ready(function(){
     $('.main__article-heading').append('<span class="heading_underline">');
     $('.heading_underline').each(function(){
-        var textLength = $(this).parent().text().length;
-        $(this).css(
-            {
-                'width': 0.7*textLength+"%",
-                'animation-name': 'underlineHeading',
-                'animation-duration': '0.7s'
-            });
+        var currentHeading = $(this);
+        var textLength = currentHeading.parent().text().length;
+        var showUnderlineAnimation = function(){
+            var startAnimationPoint = $(document).scrollTop() + (0.9* $(window).height());
+            if(startAnimationPoint >= currentHeading.offset().top){
+                currentHeading.css(
+                    {
+                        'width': 0.7*textLength+"%",
+                        'animation-name': 'underlineHeading',
+                        'animation-duration': '1.5s',
+                        'opacity': 1
+                    });
+            }
+        }
+        showUnderlineAnimation();
+        $(document).on('scroll', showUnderlineAnimation);
     })
 })

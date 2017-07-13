@@ -14,7 +14,9 @@ body{
     font-family: $main-font;
 }
 .header{
-    width: 95%;
+    width: 85%;
+    padding-left: 5%;
+    padding-right: 5%;
     margin: 20px auto 5px auto;
     text-align: center;
     border-bottom: 1px solid $clouds-darker;
@@ -30,7 +32,6 @@ body{
         }
     }
 }
-
 .aside{
     width: calc(25% - 7px);
     margin-left: 2.5%;
@@ -49,6 +50,25 @@ body{
 .aside_sticky{
     position: fixed;
     top: 4px;
+}
+.hamburger-menu-button{
+    z-index: 150;
+    width: 25px;
+    padding: 0;
+    background-color: rgba(0,0,0,0);
+    margin: 0;
+    display: block;
+    position: fixed;
+    top: 20px;
+    right: 5px;
+    border: 0;
+    display: none;
+    cursor: pointer;
+    opacity: 0.8;
+    transition: 0.2s;
+    .hamburger-icon{
+        width: 100%;
+    }
 }
 .main{
     width: calc(70% - 2px);
@@ -87,7 +107,9 @@ body{
     background-color: $clouds;
 }
 .footer{
+    text-align: center;
     margin: 0 auto;
+    padding-top: 40px;
     clear: both;
     width: 95%;
     min-height: 300px;
@@ -183,77 +205,81 @@ body{
         padding: 2px;
         font-size: 14px;
     }
-}
-.main__figure_example{
-    float: right;
-    width: 50%;
-    margin: 0 0 0 20px;
-    .main__img_example{
+    .main__img{
         width: 100%;
     }
 }
-.main__figure_time{
-    float: left;
-    width: 20%;
-    margin: 0 20px 0 0;
-    .main__img_time{
-        width: 100%;
-    }
+@mixin figure-floating($float, $width, $margin){
+    float: $float;
+    width: $width;
+    margin: $margin;
 }
-.main__figure_emotions{
-    float: left;
-    width: 35%;
-    margin: 0 20px 0 0;
-    .main__img_emotions{
-        width: 100%;
-    }
-}
-.main__figure_bucket-list{
-    float: left;
-    width: 35%;
-    margin: 0 20px 0 0;
-    .main__img_bucket-list{
-        width: 100%;
-    }
+.main__figure_example, .main__figure_graph{
+    @include figure-floating(right, 50%, 0 0 0 20px);
 }
 .main__figure_tools{
-    float: right;
-    width: 20%;
-    margin: 0 0 0 20px;
-    .main__img_tools{
-        width: 100%;
-    }
+    @include figure-floating(right, 20%, 0 0 0 20px);
 }
-.main__figure_graph{
-    float: right;
-    width: 50%;
-    margin: 0 0 0 20px;
-    .main__img_graph{
-        width: 100%;
-    }
+.main__figure_time{
+    @include figure-floating(left, 20%, 0 20px 0 0);
 }
-.main__figure_start{
+.main__figure_emotions, .main__figure_bucket-list{
+    @include figure-floating(left, 35%, 0 20px 0 0);
+}
+.main__figure_start, .main__figure_meta{
     width: 100%;
     margin: 0;
-    .main__img_start{
-        width: 100%;
-    }
-}
-.main__figure_meta{
-    width: 100%;
-    margin: 0;
-    .main__img_meta{
-        width: 100%;
-    }
 }
 @keyframes underlineHeading {
-    0%{transform: scaleX(0); opacity: 0}
+    0%{transform: scaleX(0); opacity: 0.5}
+    50%{transform: scaleX(1.2); opacity: 0.9}
     100%{transform: scaleX(1); opacity: 1}
 }
 .heading_underline{
     display: block;
-    height: 0;
     transform: scaleX(1);
     outline: 1px solid $clouds;
     margin: 0 auto;
+    opacity: 0;
 }
+.footer__social-media-list{
+    list-style: none;
+    margin: 20px auto;
+    padding: 0;
+    display: block;
+    width: 100%;
+    text-align: center;
+}
+.footer__social-media-element{
+    cursor: pointer;
+    display: inline-block;
+    margin: 10px;
+    width: 50px;
+    img{
+        transition: transform 0.6s;
+    }
+    &:hover{
+        img{
+            transform: rotateY(180deg);
+        }
+    }
+    a{
+        &:focus{
+            outline: none;
+            border-bottom: 1px solid $clouds-darker;
+            img{
+                transform: rotateY(180deg);
+            }
+        }
+    }
+}
+.footer__section-about, .footer__section-tags{
+    width: 400px;
+    display: inline-block;
+    vertical-align: top;
+}
+.footer__text-paragraph{
+    font-size: 12px;
+}
+@import 'tag-cloud';
+@import 'responsive';

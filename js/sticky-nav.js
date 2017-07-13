@@ -27,6 +27,7 @@ $(document).ready(function(){
     }
     stickyNav();
     $(window).on('scroll', function(){
-        stickyNav();
+        var windowWidth = $(window).width();
+        if(windowWidth > 710) stickyNav();
     })
 })
