@@ -246,3 +246,14 @@ body{
         width: 100%;
     }
 }
+@keyframes underlineHeading {
+    0%{transform: scaleX(0); opacity: 0}
+    100%{transform: scaleX(1); opacity: 1}
+}
+.heading_underline{
+    display: block;
+    height: 0;
+    transform: scaleX(1);
+    outline: 1px solid $clouds;
+    margin: 0 auto;
+}
