@@ -437,7 +437,22 @@ body {
     font-size: 14px; } }
 @media (max-width: 1030px) {
   .aside__nav {
-    width: 200px; } }
+    width: 200px; }
+
+  .main__figure_tools {
+    float: right;
+    width: 40%;
+    margin: 0 0 0 20px; }
+
+  .main__figure_time {
+    float: left;
+    width: 40%;
+    margin: 0 20px 0 0; }
+
+  .main__figure_emotions, .main__figure_bucket-list {
+    float: left;
+    width: 50%;
+    margin: 0 20px 0 0; } }
 @media (max-width: 830px) {
   .aside__nav {
     width: 170px; }
@@ -485,6 +500,11 @@ body {
     float: none;
     width: 90%;
     margin: 0 auto; } }
+@media (max-width: 500px) {
+  .main__figure_graph, .main__figure_example, .main__figure_emotions, .main__figure_bucket-list {
+    float: none;
+    width: 100%;
+    margin: 0; } }
 @media (max-width: 420px) {
   .footer__section-about, .footer__section-tags {
     width: 95%;

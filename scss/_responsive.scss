@@ -17,6 +17,15 @@
     .aside__nav{
         width: 200px;
     }
+    .main__figure_tools{
+        @include figure-floating(right, 40%, 0 0 0 20px);
+    }
+    .main__figure_time{
+        @include figure-floating(left, 40%, 0 20px 0 0);
+    }
+    .main__figure_emotions, .main__figure_bucket-list{
+        @include figure-floating(left, 50%, 0 20px 0 0);
+    }
 }
 @media (max-width: 830px) {
     .aside__nav{
@@ -73,6 +82,12 @@
         float: none;
         width: 90%;
         margin: 0 auto;
+    }
+}
+
+@media (max-width: 500px) {
+    .main__figure_graph, .main__figure_example, .main__figure_emotions, .main__figure_bucket-list{
+        @include figure-floating(none, 100%, 0);
     }
 }
 @media (max-width: 420px) {
