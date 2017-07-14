@@ -25,5 +25,13 @@ $(document).ready(function(){
             $('.hamburger-icon').attr('src', 'img/icons/menu-open.svg');
         }
     })
-
+    $(window).resize(function(){
+        var windowWidth = $(window).width();
+        if(windowWidth > 710){
+            $('.aside').css('display', 'block');
+        }
+        else{
+            $('.aside').css('display', 'none');
+        }
+    })
 })

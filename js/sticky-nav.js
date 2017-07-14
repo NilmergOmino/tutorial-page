@@ -5,6 +5,7 @@ $(document).ready(function(){
         mainHeight = $('#main').height(),
         asideTopMargin = 4;
     var stickyNav = function(){
+        mainHeight = $('#main').height();
         asideHeight = $('#aside').height();
         var windowTop = $(window).scrollTop();
         if(windowTop + asideHeight + asideTopMargin >= mainTop + mainHeight){
