@@ -1,5 +1,5 @@
 $(document).ready(function(){
-    $('.main__article-heading').append('<span class="heading_underline">');
+    $('.article__heading').append('<span class="heading_underline">');
     $('.heading_underline').each(function(){
         var currentHeading = $(this);
         var textLength = currentHeading.parent().text().length;

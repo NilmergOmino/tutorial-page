@@ -1,43 +1,39 @@
 @media (max-width: 1320px) {
-    .aside__nav{
+    .nav__main-list{
         width: 250px;
-    }
-    .aside__main-list{
-        .aside__list-item-button{
+        .nav__list-item-button{
             font-size: 18px;
         }
     }
-    .aside__sub-list{
-        .aside__list-item-link{
+    .nav__sub-list{
+        .nav__list-item-link{
             font-size: 14px;
         }
     }
 }
 @media (max-width: 1030px) {
-    .aside__nav{
+    .nav__main-list{
         width: 200px;
     }
-    .main__figure_tools{
+    .main__img_tools{
         @include figure-floating(right, 40%, 0 0 0 20px);
     }
-    .main__figure_time{
+    .main__img_time{
         @include figure-floating(left, 40%, 0 20px 0 0);
     }
-    .main__figure_emotions, .main__figure_bucket-list{
+    .main__img_emotions, .main__img_bucket-list{
         @include figure-floating(left, 50%, 0 20px 0 0);
     }
 }
 @media (max-width: 830px) {
-    .aside__nav{
+    .nav__main-list{
         width: 170px;
-    }
-    .aside__main-list{
-        .aside__list-item-button{
+        .nav__list-item-button{
             font-size: 16px;
         }
     }
-    .aside__sub-list{
-        .aside__list-item-link{
+    .nav__sub-list{
+        .nav__list-item-link{
             font-size: 12px;
         }
     }
@@ -46,24 +42,24 @@
     .hamburger-menu-button{
         display: block;
     }
-    .aside__nav{
-        margin: 0 auto;
-        width: 80%;
-        .aside__list-item-button{
+    .nav__main-list{
+        margin: 20px auto;
+        width: 70%;
+        .nav__list-item-button{
             text-align: center;
             font-size: 18px;
         }
-        .aside__list-item-link{
+        .nav__list-item-link{
             text-align: center;
             margin-left: 0;
             font-size: 14px;
         }
     }
-    .aside__sub-list{
+    .nav__sub-list{
         margin: 0;
         width: calc(100% - 3px);
     }
-    .aside, .aside_sticky{
+    .nav, .nav_sticky{
         display: none;
         z-index: 120;
         position: fixed;
@@ -86,7 +82,7 @@
 }
 
 @media (max-width: 500px) {
-    .main__figure_graph, .main__figure_example, .main__figure_emotions, .main__figure_bucket-list{
+    .main__figure_graph, .main__figure_example, .main__img_emotions, .main__img_bucket-list{
         @include figure-floating(none, 100%, 0);
     }
 }
