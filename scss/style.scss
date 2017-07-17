@@ -222,7 +222,7 @@ body{
 .main__img_emotions, .main__img_bucket-list{
     @include figure-floating(left, 35%, 0 20px 0 0);
 }
-.main__figure_start, .main__img_meta{
+.main__img_start, .main__img_meta{
     width: 100%;
     margin: 0;
 }
